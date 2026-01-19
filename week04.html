@@ -48,6 +48,7 @@
             color: #6B5344;
             cursor: pointer;
             padding: 12px 16px;
+            padding-right: 35px;
             width: 100%;
             text-align: left;
             border: 1px solid #e8e0d4;
@@ -56,14 +57,12 @@
             font-weight: 600;
             font-family: Georgia, serif;
             margin-top: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
             transition: background-color 0.2s;
         }
         .inner-accordion:hover { background-color: #f0e8dc; }
-        .inner-accordion::after { content: '▼'; font-size: 0.7em; color: #8B7355; transition: transform 0.3s; }
-        .inner-accordion.active::after { transform: rotate(180deg); }
+        .inner-accordion::after { content: '▼'; font-size: 0.7em; color: #8B7355; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); transition: transform 0.3s; }
+        .inner-accordion.active::after { transform: translateY(-50%) rotate(180deg); }
 
         .inner-panel {
             background-color: #ffffff;
