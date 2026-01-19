@@ -42,12 +42,12 @@
         .sub-panel { background-color: #faf8f5; border-radius: 0 0 6px 6px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 10px; }
         .sub-panel.active { max-height: none; overflow: visible; }
         .sub-panel-content { padding: 20px 25px; }
-        .inner-accordion { background-color: #e8e2d8; color: #374151; cursor: pointer; padding: 12px 18px; width: 100%; border: 1px solid #d4c4a8; text-align: left; font-size: 1em; font-weight: 500; font-family: Georgia, serif; border-radius: 5px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
-        .inner-accordion:hover { background-color: #ddd6c8; }
-        .inner-accordion::after { content: '▶'; font-size: 0.7em; color: #8B7355; transition: transform 0.3s; }
-        .inner-accordion.active::after { content: '▼'; }
-        .inner-panel { background-color: #fefdfb; border: 1px solid #e5dfd3; border-top: none; border-radius: 0 0 5px 5px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 8px; }
-        .inner-panel.active { max-height: none; overflow: visible; }
+        button.inner-accordion { background-color: #e8e2d8; color: #374151; cursor: pointer; padding: 12px 18px; width: 100%; border: 1px solid #d4c4a8; text-align: left; font-size: 1em; font-weight: 500; font-family: Georgia, serif; border-radius: 5px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
+        button.inner-accordion:hover { background-color: #ddd6c8; }
+        button.inner-accordion::after { content: '▶'; font-size: 0.7em; color: #8B7355; transition: transform 0.3s; margin-left: 10px; }
+        button.inner-accordion.active::after { content: '▼'; }
+        div.inner-panel { background-color: #fefdfb; border: 1px solid #e5dfd3; border-top: none; border-radius: 0 0 5px 5px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 8px; }
+        div.inner-panel.active { max-height: none; overflow: visible; }
         .inner-panel-content { padding: 18px 22px; }
         .panel-content h2 { color: #8B7355; margin-bottom: 20px; font-size: 1.8em; }
         .panel-content h3 { color: #6B5344; margin-top: 25px; margin-bottom: 15px; font-size: 1.4em; }
