@@ -42,6 +42,13 @@
         .sub-panel { background-color: #faf8f5; border-radius: 0 0 6px 6px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 10px; }
         .sub-panel.active { max-height: none; overflow: visible; }
         .sub-panel-content { padding: 20px 25px; }
+        .inner-accordion { background-color: #e8e2d8; color: #374151; cursor: pointer; padding: 12px 18px; width: 100%; border: 1px solid #d4c4a8; text-align: left; font-size: 1em; font-weight: 500; font-family: Georgia, serif; border-radius: 5px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .inner-accordion:hover { background-color: #ddd6c8; }
+        .inner-accordion::after { content: '▶'; font-size: 0.7em; color: #8B7355; transition: transform 0.3s; }
+        .inner-accordion.active::after { content: '▼'; }
+        .inner-panel { background-color: #fefdfb; border: 1px solid #e5dfd3; border-top: none; border-radius: 0 0 5px 5px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 8px; }
+        .inner-panel.active { max-height: none; overflow: visible; }
+        .inner-panel-content { padding: 18px 22px; }
         .panel-content h2 { color: #8B7355; margin-bottom: 20px; font-size: 1.8em; }
         .panel-content h3 { color: #6B5344; margin-top: 25px; margin-bottom: 15px; font-size: 1.4em; }
         .panel-content h4 { color: #5a4a3a; margin-top: 20px; margin-bottom: 12px; font-size: 1.2em; }
@@ -2545,13 +2552,23 @@
                 subPanel.classList.toggle('active');
             });
         });
+        const innerAccordions = document.querySelectorAll('.inner-accordion');
+        innerAccordions.forEach(innerAccordion => {
+            innerAccordion.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const innerPanel = this.nextElementSibling;
+                innerPanel.classList.toggle('active');
+            });
+        });
         function expandAll() {
             accordionSections.forEach(section => { section.classList.add('active'); section.nextElementSibling.classList.add('active'); });
             subAccordions.forEach(subAccordion => { subAccordion.classList.add('active'); subAccordion.nextElementSibling.classList.add('active'); });
+            innerAccordions.forEach(innerAccordion => { innerAccordion.classList.add('active'); innerAccordion.nextElementSibling.classList.add('active'); });
         }
         function collapseAll() {
             accordionSections.forEach(section => { section.classList.remove('active'); section.nextElementSibling.classList.remove('active'); });
             subAccordions.forEach(subAccordion => { subAccordion.classList.remove('active'); subAccordion.nextElementSibling.classList.remove('active'); });
+            innerAccordions.forEach(innerAccordion => { innerAccordion.classList.remove('active'); innerAccordion.nextElementSibling.classList.remove('active'); });
         }
         </script>
 
